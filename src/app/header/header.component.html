@@ -1,0 +1,64 @@
+<header class="header">  
+    <a href="#" class="logo">
+        <img src="../../assets/MmarketsSOTET.jpg" alt="" height="60px" width="60px">
+    </a>
+    
+    <nav class="navbar" [class.is-open]="isMenuOpen">
+      <a href="/">Főoldal</a>
+      <a routerLink="/competitions">Versenykiírások</a>
+      <a href="#HKK">HKK</a>
+      <a href="#Lego">Lego</a>
+      <a href="#kieg">Játékkiegészítők</a>
+      <a href="#points">MMpoints</a>
+      <a href="#VIP">VIP</a>
+    </nav>
+  
+    <div class="icons">
+      <div class="fas fa-search" id="search-btn" (click)="toggleSearchBar()"></div>
+
+      <div class="icon-container">  
+        <div class="fas fa-shopping-cart" id="cart-btn" (click)="toggleCart()"></div>
+        <div class="badge">{{ cartItems.length }}</div>
+      </div>
+      
+      <div > <a href="">Bejelntkezés</a>
+       <a href="">Regisztráció</a></div>
+
+      <div class="burger" (click)="toggleMenu()">
+        <i class="material-icons">{{ isMenuOpen ? "close" : "menu"}}</i>
+        </div>
+
+    </div>
+    
+    <div [ngClass]="{'search-form': true, 'active': searchBarVisible}">
+      <input type="text" placeholder="Keresés a termékek között..." [(ngModel)]="searchQuery" (input)="onSearch()" />
+      <button class="btnse" (click)="onSearch()">Keresés</button>
+    </div>
+  
+    <div *ngIf="searchResults.length > 0" class="search-results">
+      <p>Eredmények:</p>
+      <ul>
+        <li *ngFor="let product of searchResults">{{ product }}</li>
+      </ul>
+    </div>
+  
+
+    
+    <div class="login-form">
+      <div class="login-container">
+        <div class="login-area">
+          <input type="text" id="username-box" placeholder="Felhasználónév">
+          <input type="password" id="password-box" placeholder="Jelszó">
+          <a href="#" class="btn">Belépés</a>
+          <a href="#" class="btn">Regisztráció</a>
+        </div>
+      </div>
+    </div>
+    
+    <div *ngIf="cartVisible" class="cart-content">
+      <p>Kosár tartalom:</p>
+      <ul>
+        <li *ngFor="let item of cartItems">{{ item }}</li>
+      </ul>
+    </div>
+</header>

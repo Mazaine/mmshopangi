@@ -1,1 +1,714 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --main-color:#d3ad7f;
+    --black: #13131a;
+    --bg:#010103;
+    --border:.1rem solid rgba(255,255,255.3);
+    --white:#fff;
+    --box-width: 20rem; 
+    --box-height: 35rem;
+    --menuBreakpoint: 400px;
+}
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+   
+}
+html {
+   
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--white);
+    border-radius: 5rem;
+}
+body{
+    background: var(--bg);
+}
+section{
+    padding: 2rem 7%;
+}
+.heading{
+    text-align: center;
+    color: var(--white);
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+.heading span{
+color: var(--main-color);
+
+}
+.heading2{
+    text-align: center;
+    color: var(--white);
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+    margin-top: 100px;
+}
+.heading2 span{
+color: var(--main-color);
+
+}
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem ;
+    font-size: 1.7rem;
+    color: var(--white);
+    background: var(--main-color);
+    cursor: pointer;
+    
+}
+.btn2{
+    margin-top: 1rem;
+    margin-left: 10rem;
+    display: inline-block;
+    padding: .9rem 3rem ;
+    font-size: 1.7rem;
+    color: var(--white);
+    background: var(--main-color);
+    cursor: pointer;
+    
+}
+
+.header {
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 7%;
+    border-bottom: var(--border);
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+}
+.header .logo {
+    height: 6rem;
+}
+
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    color: var(--white);
+}
+.header .navbar a:hover{
+    color: var(--main-color);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom:.5rem ;
+}
+.header .icons div {
+    color: var(--white);
+    cursor: pointer;
+    margin-left: 1rem;
+}
+.header .icons a{
+    margin: 0 1rem;
+    font-size: 1rem;
+    color: var(--white);
+}
+.header .icons a:hover{
+    color: var(--main-color);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom:.5rem ;
+}
+.header .icons div:hover{
+    color: var(--main-color);
+}
+#cart-btn, #search-btn, .menu, #login-btn{
+    font-size: 2rem;
+}
+.header .search-form{
+    position: absolute;
+    top:115%; right: 7%;
+    background: var(--white);
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+.header .search-form.active{
+    transform: scaleY(1);
+}
+.header .search-form input{
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 1rem;
+    text-transform: none;
+}
+.header .login-form{
+    position: absolute;
+    top:115%; right: 7%;
+    background: white;
+    width: 25rem;
+    height: 5rem;
+    display: inline-block;
+    justify-content: center;
+    transform: scaleY(0);
+    transform-origin: top;
+    }
+    .header .login-container .login-area{
+        background: var(--white);
+        justify-content: center;
+    }
+.header #login-box{
+    border: 3px solid black;
+}
+.header .login-form.active{
+    transform: scaleY(1);
+}
+.header .login-form input{
+    height: 100%;
+    width: 80%;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 1rem;
+    text-transform: none;
+    margin-left: 25px;
+    margin-top: 5px;
+}
+.header .login-form .btn{
+    width: 90%;
+    text-align: center;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.header .search-form label{
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color: var(--black);
+}
+.header .search-form label:hover {
+    color: var(--main-color);
+}
+
+.icon-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .icon-container .fa-shopping-cart {
+    font-size: 10rem;
+  }
+  
+   .badge {
+    position: absolute;
+    top: -40%;
+    right: -20%;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .icons {
+    display: flex;
+    justify-content: space-around; /* Egyenletes elosztás az elemek között */
+    align-items: center; /* Vertikális középre igazítás */
+    gap: 10px; /* Távolság az ikonok között */
+}
+
+.icon-container {
+    position: relative; /* A badge helyzetének szabályozásához */
+}
+.burger {
+    padding: 0 10px;
+    border-left: 1px solid #eee;
+    display: none;
+    cursor: pointer;
+  }
+  
+  .burger i {
+    color: #999;
+    line-height: 50px; /* $menuHeight */
+  }
+  
+  @media (max-width: 800px) { /* $menuBreakpoint */
+    .burger {
+      display: block;
+    }
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  @media (max-width: 800px) { /* $menuBreakpoint */
+    .menu {
+      display: none;
+    }
+  
+    .menu.is-open {
+      display: block;
+      position: absolute;
+      top: 52px; /* $menuHeight + 2 */
+      background: #fff;
+      width: 100%;
+    }
+  
+    .menu.is-open .menu-item {
+      border-bottom: 1px solid #cccccc;
+    }
+    .navbar {
+        display: none; /* Menü alapértelmezetten rejtve */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg);
+        flex-direction: column;
+        color: #fff;
+      }
+    
+      .navbar.is-open {
+        display: block; /* Megnyitott menü megjelenik */
+      }
+    
+  }
+  
+  .menu .menu-item {
+    padding: 0 10px;
+    height: 50px; /* $menuHeight */
+    line-height: 50px; /* $menuHeight */
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #454545;
+  }
+  
+
+
+  .cart-content {
+    position: absolute;
+    top: 120%; /* Kosár tartalom helyezése az ikon alatt */
+    right: 0;
+    background: white; /* Kosár tartalom háttérszíne */
+    border: 1px solid #ccc; /* Kosár tartalom kerete */
+    width: 20rem; /* Kosár tartalom szélessége */
+    padding: 1rem; /* Kosár tartalom belső margója */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Árnyék hozzáadása */
+    z-index: 1000; /* Kosár tartalom rétege */
+  }
+  
+.menu{
+    color: white
+}
+
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(./assets/fantasy-markets-street.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.home .content{
+    max-width: 60rem;
+}
+.home .content h3{
+   font-size: 4rem;
+   color: var(--white);
+   text-transform: uppercase;
+   line-height: 100px;
+   text-shadow: black 1px 0 10px;
+}
+.home .content p{
+    font-size: 2rem;
+    color: var(--white);
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 1rem 0;
+    text-transform: none;
+    text-shadow: black 1px 0 10px;
+ }
+.placeholder p
+{
+    font-size: 2rem;
+    color: var(--white);
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 1rem 0;
+    text-transform: none;
+
+ }
+
+
+ .about .row {
+    display: flex;
+    align-items: flex-start;
+    background: var(--black);
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.about .row .calendar {
+    flex: 1 1 25rem;
+    background: #444;
+    color: var(--white);
+    padding: 1rem;
+    margin-right: 1rem;
+}
+
+.about .row .content {
+    flex: 1 1 45rem;
+    padding: 2rem;
+    background: #222;
+    color: var(--white);
+}
+
+.about .row .content h3 {
+    font-size: 3rem;
+    color: var(--white);
+}
+
+.about .row .content p {
+    font-size: 1.5rem;
+    color: var(--white);
+    padding: 1rem 0;
+}
+.chategory .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+.chategory .box-container .box{
+    padding: 2.5rem;
+    text-align: center;
+    border: var(--border);
+}
+.chategory .box-container .box img{
+    height: 16rem;
+   
+}
+.chategory .box-container .box h3{
+    color: var(--white);
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+.chategory .box-container .box:hover{
+
+  background:  var(--white);
+
+}
+
+.chategory .box-container .box:hover > *{
+
+  color: var(--black)
+
+}
+.chategory .box-container a{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    font-size: 1.7rem;
+    color: var(--white);
+    background: var(--main-color);
+    cursor: pointer;
+}
+
+.products .box-container {
+  display: grid;
+  justify-content: center; /* Középre igazítja a rácsot */
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 2rem;
+}
+
+
+.products .box-container .box {
+    width: var(--box-width); /* Fix szélesség */
+    height: var(--box-height); /* Fix magasság */
+    padding: 2.5rem;
+    text-align: center;
+    border: var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black; 
+    box-sizing: border-box;
+}
+
+.products .box-container .box img {
+    height: 60%; /* Azonos magasság a képekhez a box magasságához viszonyítva */
+    width: auto; /* Kép arányainak megőrzése */
+    
+    margin-top: 1rem;
+}
+
+.products .box-container .box a {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: .7rem 3rem;
+  font-size: 1.7rem;
+  color: var(--white);
+  background: var(--main-color);
+  cursor: pointer;
+}
+
+.products .box-container .box h3 {
+  color: var(--white);
+  font-size: 1.5rem;
+  padding: 1rem 0;
+}
+
+.products .box-container .box p {
+  color: var(--white);
+  font-size: 1.3rem;
+}
+
+.products .box-container .box .price span {
+  color: var(--white);
+  font-size: 1.5rem;
+  text-decoration: line-through;
+}
+
+.contact .row{
+
+  display: flex;
+
+  align-items: center;
+
+  background: var(--black);
+
+  flex-wrap: wrap;
+
+  gap: 1rem;
+
+}
+.contact .row .map{
+  flex: 1 1 45rem;
+  width:100%;
+  object-fit: cover;
+}
+
+.contact .row form {
+
+  flex: 1 1 45rem;
+
+   padding: 5rem 2rem;
+  text-align: center;
+
+}
+ .contact .row form .inputBox {
+   display: flex;
+   align-self: center;
+   margin-top: 2rem;
+   margin-bottom: 2rem;
+   background: var(--black);
+   border: var(--border);
+ }
+
+ .contact .row form .inputBox span {
+
+   color: var(--white);
+
+   font-size: 2em;
+
+   padding-left: 2rem;
+
+   margin-top: 2rem;
+
+ }
+ .contact .row form .inputBox input{
+   width: 100%;
+   padding: 2rem;
+   font-size: 1.7rem;
+   color: var(--white);
+   text-transform: none;
+   background: none;
+ }
+
+.contact .row form .inputBox textarea{
+   
+   padding: 2rem;
+   font-size: 1.7rem;
+   color: var(--white);
+   text-transform: none;
+   background: none;
+ }
+.footer {
+  background: var(--black);
+  text-align: center;
+}
+.footer .partners {
+  padding: 1rem 0;
+}
+
+.footer .partners a img{
+  height: 5rem;
+  margin: 2rem;
+  width: 5rem;
+
+  line-height: 5rem;
+
+  font-size: 2rem;
+
+  color: var(--white);
+
+  border: var(--border);
+
+  border-radius: 50%;
+}
+.footer-credit .credit {
+  font-size: 2rem;
+  color: var(--white);
+  font-weight: lighter;
+  padding: 1.5rem;
+  text-align: center;
+}
+.footer-credit .credit span{
+  color: var(--main-color);
+}
+
+
+
+
+
+
+/* Media query a nagyobb nézetekhez */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    .header {
+        padding: 1.5rem 2rem;
+    }
+    section {
+        padding: 2rem;
+    }
+    .products .box-container .box {
+        max-width: 90%;
+        padding: 2rem;
+        text-align: center;
+        border: var(--border);
+    }
+}
+
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 1.5rem 2rem;
+    }
+    section{
+        padding: 2rem ;
+    }
+    .products .box-container .box {
+        max-width: 90%; /* Biztosítja, hogy a dobozok ne legyenek túl szélesek */
+        padding: 2rem;
+        text-align: center;
+        border: var(--border);
+      }
+      .badge {
+        position: absolute;
+        top: -40%;
+        right: -20%;
+        background: red;
+        color: white;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+      }
+}
+@media (max-width:800px){
+    #menu-btn{
+        display: inline-block;
+    }
+    .header .navbar{
+        position: absolute;
+        top: 100%; right: -100%;
+        background: var(--white);
+        width: 20rem;
+        height: calc(100vh - 9.5rem);
+    }
+    .header .navbar.active{
+        right: 0;
+    }
+    .header .navbar a{
+        color: var(--black);
+        display: block;
+        margin: 1.5rem;
+        padding: .5rem;
+        font-size: 2rem;
+    }
+    .header .search-form{
+        width: 90%;
+        right: 2rem;
+    }
+    .badge {
+        position: absolute;
+        top: -40%;
+        right: -20%;
+        background: red;
+        color: white;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+      }
+    .home{
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+    }
+    .home content h3{
+        font-size: 4.5rem;
+    }
+    .home content p{
+        font-size: 1.5rem;
+    }
+    .btn2{
+        margin-left: 8px;
+
+    }
+    .products .box-container .box {
+        max-width: 100%; /* Biztosítja, hogy a dobozok ne legyenek túl szélesek */
+        padding: 2rem;
+        text-align: center;
+        border: var(--border);
+      }
+}
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
