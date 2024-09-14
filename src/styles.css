@@ -155,44 +155,8 @@ color: var(--main-color);
     padding: 1rem;
     text-transform: none;
 }
-.header .login-form{
-    position: absolute;
-    top:115%; right: 7%;
-    background: white;
-    width: 25rem;
-    height: 5rem;
-    display: inline-block;
-    justify-content: center;
-    transform: scaleY(0);
-    transform-origin: top;
-    }
-    .header .login-container .login-area{
-        background: var(--white);
-        justify-content: center;
-    }
-.header #login-box{
-    border: 3px solid black;
-}
-.header .login-form.active{
-    transform: scaleY(1);
-}
-.header .login-form input{
-    height: 100%;
-    width: 80%;
-    font-size: 1.6rem;
-    color: var(--black);
-    padding: 1rem;
-    text-transform: none;
-    margin-left: 25px;
-    margin-top: 5px;
-}
-.header .login-form .btn{
-    width: 90%;
-    text-align: center;
-    margin-left: 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
+ 
+ 
 .header .search-form label{
     cursor: pointer;
     font-size: 2.2rem;
@@ -363,17 +327,15 @@ color: var(--main-color);
 
  .about .row {
     display: flex;
-    align-items: flex-start;
-    background: var(--black);
     flex-wrap: wrap;
-    padding: 1rem;
-}
+    justify-content: space-between;
+    height: 100%; /* A sor kitölti a szülőelem teljes magasságát */
+  }
 
 .about .row .calendar {
     flex: 1 1 25rem;
     background: #444;
     color: var(--white);
-    padding: 1rem;
     margin-right: 1rem;
 }
 
@@ -590,9 +552,63 @@ color: var(--main-color);
 }
 
 
+/*Calendar*/
+.calendar {
+    flex: 1 1 50%;
+    background-color: white;
+    border-radius: 25px;
+    padding: 35px;
+   
+    height: 100%; /* A naptár teljes magasságban töltse ki a szülőt */
+  }
+  .p-datepicker-calendar-container{
+background: white;
+height: 440px;
+  }
+  .p-calendar {
+    width: 100% !important;
+    height: 500px !important; /* A naptár kitölti a szülőelem teljes magasságát */
+    background-color: #444;
+  }
 
+.custom-datepicker .p-datepicker-header {
+    background: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 10px;
+    height: 60px;
+  }
+  
+ 
+  .custom-datepicker .p-datepicker-month{
+    margin-right:50px ;
+    font-size: 30px;
+  }
+  .custom-datepicker .p-datepicker-year{
+   
+    font-size: 30px;
+  }
 
+  .p-datepicker-calendar-container{
+    background-color: #444;
+  }
 
+  .p-datepicker table {
+    font-size: 2rem;
+   padding: 20px;
+    color: #fff;
+    line-height: 200px;
+}
+.p-datepicker th {
+  color: #d3ad7f;
+}
+.p-datepicker tr{
+  color: #d3ad7f;
+  margin-bottom: 30px;
+}
 
 /* Media query a nagyobb nézetekhez */
 @media (max-width: 991px) {

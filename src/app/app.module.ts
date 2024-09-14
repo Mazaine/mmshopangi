@@ -7,7 +7,12 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
-import { CompetitionsComponent } from './competitions/competitions.component';  // FormsModule importálása
+import { CompetitionsComponent } from './competitions/competitions.component';
+import { CalendarModule } from 'primeng/calendar';
+import { FooterComponent } from './footer/footer.component';
+import { SellerAuthComponent } from './seller-auth/seller-auth.component';
+
+
 
 
 @NgModule({
@@ -15,13 +20,17 @@ import { CompetitionsComponent } from './competitions/competitions.component';  
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    CompetitionsComponent
+    CompetitionsComponent,
+    FooterComponent,
+    SellerAuthComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    FormsModule  // FormsModule hozzáadása az imports tömbhöz
+    FormsModule ,
+    CalendarModule // FormsModule hozzáadása az imports tömbhöz
   ],
   providers: [
     provideClientHydration(),

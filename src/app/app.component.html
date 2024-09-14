@@ -1,4 +1,15 @@
 <app-header></app-header>
-<app-home></app-home>
-<app-competitions></app-competitions>
-<router-outlet></router-outlet>
+
+<!-- Router outlet a többi oldal tartalmához -->
+<router-outlet (activate)="onActivate($event)"></router-outlet>
+
+<!-- Feltételes megjelenítés a főoldalon -->
+<ng-container *ngIf="currentRoute === ''">
+  <!-- Competitions szakasz -->
+  <div id="competitions">
+    <app-competitions></app-competitions>
+  </div>
+</ng-container>
+<ng-container *ngIf="currentRoute === ''">
+<app-footer></app-footer>
+</ng-container>
