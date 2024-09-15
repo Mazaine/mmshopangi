@@ -1,15 +1,30 @@
 <h1 class="heading">Seller Auth Page</h1>
-<h1 class="heading">Eladó <span>Bejelentkezés</span></h1>
+<h1 class="heading">Seller <span>sign up</span></h1>
 
-<div class="login-form">
-    <div class="login">
+<div *ngIf="!showLogin"  class="signUp-form">
+    <div class="sign-up">
     <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)"
       class="common-form" >
         <input class="form-input" type="text" ngModel name="name" placeholder="Felhasznalónév">
         <input class="form-input" type="password" ngModel name="password" placeholder="Jelszó">
         <input class="form-input" type="text" ngModel name="email" placeholder="E-mail">
-        <button class="btn">Bejelentkezés</button>
-    </form>
+        <button class="btn">Sign up</button>
+        <a (click)="openLogin()">Alredy have account? Click to login</a>
+    </form></div>
 
     </div>
+<br>
+    <!--Login area-->
+    <div *ngIf="showLogin" class="login-form">
+    <div  class="login">
+      <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)"
+        class="common-form" >
+        <input class="form-input" type="text" ngModel name="email" placeholder="E-mail">
+          <input class="form-input" type="password" ngModel name="password" placeholder="Jelszó">
+          
+          <button class="btn">Login</button>
+          <a (click)="openSignUp()">Don't have account? Click to Sign up</a>
+      </form>
+  
+      </div>
 </div>

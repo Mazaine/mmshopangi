@@ -40,7 +40,7 @@ html::-webkit-scrollbar-thumb{
 }
 body{
     background: var(--bg);
-    padding-top: 9rem;
+    padding-top: 7rem;
 }
 section{
     padding: 2rem 7%;
@@ -49,7 +49,7 @@ section{
     text-align: center;
     color: var(--white);
     padding-bottom: 3.5rem;
-    font-size: 4rem;
+    font-size: 2rem;
 }
 .heading span{
 color: var(--main-color);
@@ -59,7 +59,7 @@ color: var(--main-color);
     text-align: center;
     color: var(--white);
     padding-bottom: 3.5rem;
-    font-size: 4rem;
+    font-size: 2rem;
     margin-top: 100px;
 }
 .heading2 span{
@@ -70,7 +70,7 @@ color: var(--main-color);
     margin-top: 1rem;
     display: inline-block;
     padding: .9rem 3rem ;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     color: var(--white);
     background: var(--main-color);
     cursor: pointer;
@@ -81,7 +81,7 @@ color: var(--main-color);
     margin-left: 10rem;
     display: inline-block;
     padding: .9rem 3rem ;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     color: var(--white);
     background: var(--main-color);
     cursor: pointer;
@@ -93,7 +93,7 @@ color: var(--main-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 7%;
+    padding: .5rem 4%;
     border-bottom: var(--border);
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -105,7 +105,7 @@ color: var(--main-color);
 
 .header .navbar a{
     margin: 0 1rem;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: var(--white);
 }
 .header .navbar a:hover{
@@ -120,7 +120,7 @@ color: var(--main-color);
 }
 .header .icons a{
     margin: 0 1rem;
-    font-size: 1rem;
+    font-size: .9rem;
     color: var(--white);
 }
 .header .icons a:hover{
@@ -132,7 +132,7 @@ color: var(--main-color);
     color: var(--main-color);
 }
 #cart-btn, #search-btn, .menu, #login-btn{
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .header .search-form{
     position: absolute;
@@ -155,6 +155,13 @@ color: var(--main-color);
     color: var(--black);
     padding: 1rem;
     text-transform: none;
+}
+.signUp-form {                           /* signup */
+  background: #222;
+  width: 80%; /* Mobil nézetben szélesebb, hogy kitöltse a képernyőt */
+  max-width: 400px; /* Nagyobb képernyőknél maximáljuk a szélességet */
+  margin: 0 auto;
+  padding: 20px;
 }
 .login-form {                           /* login */
   background: #222;
@@ -181,16 +188,26 @@ color: var(--main-color);
   border: 1px solid var(--black);
   width: 100%; /* 100% szélesség, hogy kitöltse a rendelkezésre álló helyet */
 }
+.signUp-form, a{
+  padding-top: 20px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.login-form a{
+  padding-top: 20px;
+  color: #ffffff;
+  cursor: pointer;
+}
 
 /* Reszponzív design @media szabállyal */
 @media (min-width: 768px) {
-  .login-form {
+  .login-form, .signUp-form {
     width: 50%; /* Közepes méretű képernyőknél 50% szélesség */
   }
 }
 
 @media (min-width: 1024px) {
-  .login-form {
+  .login-form, .signUp-form {
     width: 30%; /* Nagyobb képernyőknél 30% szélesség */
   }
 }
@@ -221,12 +238,12 @@ color: var(--main-color);
     background: red;
     color: white;
     border-radius: 50%;
-    width: 25px;
-    height: 25px;
+    width: 17px;
+    height: 17px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 12px;
   }
   .icons {
     display: flex;
@@ -336,7 +353,7 @@ color: var(--main-color);
     max-width: 60rem;
 }
 .home .content h3{
-   font-size: 4rem;
+   font-size: 2rem;
    color: var(--white);
    text-transform: uppercase;
    line-height: 100px;
@@ -385,7 +402,7 @@ color: var(--main-color);
 }
 
 .about .row .content h3 {
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--white);
 }
 
@@ -394,10 +411,16 @@ color: var(--main-color);
     color: var(--white);
     padding: 1rem 0;
 }
+.products {                        /*Temékek*/
+  margin: 0;
+  padding: 0;
+}
+
 .chategory .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Ez biztosítja, hogy a box-ok egymás mellett helyezkedjenek el */
+  gap: 20px; /* Helyet ad a box-ok között, ha szükséges */
 }
 .chategory .box-container .box{
     padding: 2.5rem;
@@ -489,6 +512,30 @@ color: var(--main-color);
   color: var(--white);
   font-size: 1.5rem;
   text-decoration: line-through;
+}
+/* Méretezés kisebb képernyőkön */
+@media (max-width: 1200px) {
+  .box {
+      flex: 1 1 calc(25% - 20px); /* Kisebb képernyőkön 4 box egy sorban */
+  }
+}
+
+@media (max-width: 900px) {
+  .box {
+      flex: 1 1 calc(33.33% - 20px); /* Még kisebb képernyőkön 3 box egy sorban */
+  }
+}
+
+@media (max-width: 600px) {
+  .box {
+      flex: 1 1 100%; /* Nagyon kicsi képernyőkön 2 box egy sorban */
+  }
+}
+
+@media (max-width: 400px) {
+  .box {
+      flex: 1 1 100%; /* Mobilnézetben csak 1 box jelenjen meg egy sorban */
+  }
 }
 
 .contact .row{
@@ -659,12 +706,7 @@ height: 440px;
     section {
         padding: 2rem;
     }
-    .products .box-container .box {
-        max-width: 90%;
-        padding: 2rem;
-        text-align: center;
-        border: var(--border);
-    }
+    
 }
 
 @media (max-width:991px){
@@ -677,12 +719,7 @@ height: 440px;
     section{
         padding: 2rem ;
     }
-    .products .box-container .box {
-        max-width: 90%; /* Biztosítja, hogy a dobozok ne legyenek túl szélesek */
-        padding: 2rem;
-        text-align: center;
-        border: var(--border);
-      }
+   
       .badge {
         position: absolute;
         top: -40%;
@@ -752,12 +789,7 @@ height: 440px;
         margin-left: 8px;
 
     }
-    .products .box-container .box {
-        max-width: 100%; /* Biztosítja, hogy a dobozok ne legyenek túl szélesek */
-        padding: 2rem;
-        text-align: center;
-        border: var(--border);
-      }
+  
 }
 @media (max-width:450px){
     html{

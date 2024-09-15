@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { SellerService } from './services/seller.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,8 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class AppComponent {
   currentRoute: string = '';
+  
+
 
   constructor(private router: Router) {
     // Frissítjük az aktuális útvonalat az útvonal eseményei alapján
