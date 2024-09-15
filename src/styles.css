@@ -40,6 +40,7 @@ html::-webkit-scrollbar-thumb{
 }
 body{
     background: var(--bg);
+    padding-top: 9rem;
 }
 section{
     padding: 2rem 7%;
@@ -155,8 +156,45 @@ color: var(--main-color);
     padding: 1rem;
     text-transform: none;
 }
- 
- 
+.login-form {                           /* login */
+  background: #222;
+  width: 80%; /* Mobil nézetben szélesebb, hogy kitöltse a képernyőt */
+  max-width: 400px; /* Nagyobb képernyőknél maximáljuk a szélességet */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.common-form {
+  text-align: center;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  width: 100%; /* 100% szélesség mobil nézetben */
+  max-width: 400px; /* Max szélesség nagyobb képernyőkön */
+  padding: 20px;
+}
+
+.form-input {
+  height: 35px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  border: 1px solid var(--black);
+  width: 100%; /* 100% szélesség, hogy kitöltse a rendelkezésre álló helyet */
+}
+
+/* Reszponzív design @media szabállyal */
+@media (min-width: 768px) {
+  .login-form {
+    width: 50%; /* Közepes méretű képernyőknél 50% szélesség */
+  }
+}
+
+@media (min-width: 1024px) {
+  .login-form {
+    width: 30%; /* Nagyobb képernyőknél 30% szélesség */
+  }
+}
+
 .header .search-form label{
     cursor: pointer;
     font-size: 2.2rem;
@@ -669,7 +707,7 @@ height: 440px;
         top: 100%; right: -100%;
         background: var(--white);
         width: 20rem;
-        height: calc(100vh - 9.5rem);
+        
     }
     .header .navbar.active{
         right: 0;

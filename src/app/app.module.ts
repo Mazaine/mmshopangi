@@ -7,10 +7,11 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
-import { CompetitionsComponent } from './competitions/competitions.component';
 import { CalendarModule } from 'primeng/calendar';
 import { FooterComponent } from './footer/footer.component';
 import { SellerAuthComponent } from './seller-auth/seller-auth.component';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { SellerHomeComponent } from './seller-home/seller-home.component';
 
 
 
@@ -20,9 +21,9 @@ import { SellerAuthComponent } from './seller-auth/seller-auth.component';
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    CompetitionsComponent,
     FooterComponent,
     SellerAuthComponent,
+    SellerHomeComponent,
    
   ],
   imports: [
@@ -30,11 +31,13 @@ import { SellerAuthComponent } from './seller-auth/seller-auth.component';
     AppRoutingModule,
     FontAwesomeModule,
     FormsModule ,
-    CalendarModule // FormsModule hozzáadása az imports tömbhöz
+    CalendarModule, // FormsModule hozzáadása az imports tömbhöz
+   
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideHttpClient(withInterceptorsFromDi()), // Új módszer a HttpClient konfigurálásához
   ],
   bootstrap: [AppComponent]
 })

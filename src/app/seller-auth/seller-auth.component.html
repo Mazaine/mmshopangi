@@ -3,8 +3,12 @@
 
 <div class="login-form">
     <div class="login">
-    <form >
-        <input type="text" placeholder="enter your name">
+    <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)"
+      class="common-form" >
+        <input class="form-input" type="text" ngModel name="name" placeholder="Felhasznalónév">
+        <input class="form-input" type="password" ngModel name="password" placeholder="Jelszó">
+        <input class="form-input" type="text" ngModel name="email" placeholder="E-mail">
+        <button class="btn">Bejelentkezés</button>
     </form>
 
     </div>

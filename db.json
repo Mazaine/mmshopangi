@@ -1,0 +1,34 @@
+{
+  "seller": [
+    {
+      "id": "e667",
+      "name": "Szabó Eszter",
+      "email": "szaboeszter@gmail.com",
+      "password": "asd123"
+    },
+    {
+      "id": "79e5",
+      "name": "Szabó Bobita",
+      "email": "szabobobi@gmail.com",
+      "password": "123asd"
+    },
+    {
+      "id": "11ab",
+      "name": "Diószegi Dömötör",
+      "password": "maci01",
+      "email": "diodomi@gmail.com"
+    },
+    {
+      "id": "b28f",
+      "name": "Diószegi Dömötör",
+      "password": "maci01",
+      "email": "diodomi@gmail.com"
+    },
+    {
+      "id": "8937",
+      "name": "",
+      "password": "",
+      "email": ""
+    }
+  ]
+}
