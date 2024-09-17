@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import { SignUp } from '../data-type';
+import { login, SignUp } from '../data-type';
 import { BehaviorSubject } from 'rxjs';
 import {Router} from '@angular/router'
 
@@ -26,4 +26,11 @@ constructor(private http:HttpClient, private router:Router) { }
       this.router.navigate(['seller-home']);
     }
   }
+
+  userLogin(data:login){
+    console.warn(data)
+   this.http.get(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`,
+    {observe:'response' }
+  ).subscribe((result:any)=>{})
+}
 }

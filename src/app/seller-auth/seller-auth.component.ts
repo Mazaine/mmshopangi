@@ -20,7 +20,8 @@ signUp(data:SignUp):void {
   this.seller.userSignUp(data);
 }
 login(data:SignUp):void {
-  console.warn(data);
+  //console.warn(data);
+  this.seller.userLogin(data);
 }
 openLogin(){
 this.showLogin=true

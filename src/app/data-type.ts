@@ -3,3 +3,9 @@ export interface SignUp{
     password: String,
     email: String
 }
+
+
+export interface login{
+    email: String,
+    password: String
+}
